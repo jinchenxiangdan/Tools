@@ -110,6 +110,7 @@ done
 
 # list the hashtable 
 print_my_hashtable
+# echo ${MY_HASHTABLE[@]}
 
 #
 # check & compare the files checksum
@@ -121,7 +122,7 @@ print_my_hashtable
 # 
 
 
-close
+CLOSE $MY_HASHTABLE
 echo "Done."
 
 

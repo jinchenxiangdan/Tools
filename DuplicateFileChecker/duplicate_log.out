@@ -1,6 +1,7 @@
 
 Target file is duplicate_test_folder/asu-asdf-asdf-asd-ert/.
 moved to asu-asdf-asdf-asd-ert
+Found invalid file: asu-asdf-asdf-asd-erd_testfile1.txt, moving to /home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/duplicate_test_folder/asu-asdf-asdf-asd-ert/invalid_name_files/...
 going to add asu-asdf-asdf-asd-ert_testfile1.txt to hashtable (a5890ace30a3e84d9118196c161aeec2)
 going to add asu-asdf-asdf-asd-ert_testfile2.txt to hashtable (a5890ace30a3e84d9118196c161aeec2)
 going to add asu-asdf-asdf-asd-ert_testfile3.txt to hashtable (11ab5b595ff6e2072a0aee6df497d89c)
