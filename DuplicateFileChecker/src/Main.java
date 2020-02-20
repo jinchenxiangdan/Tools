@@ -7,25 +7,31 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.HashMap;
 
 public class Main {
+    private static HashMap<String, String> checksumHashMap = new HashMap<>();
+    
     public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
+        // for testing 
         String testInputPath = "/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/duplicate_test_folder";
         Path testPath = Paths.get(testInputPath);
+        //
         System.out.println("Checking duplicate files...");
         File[] files = getFiles(testPath);
-        System.out.println("Size: " + files.length);
 
-        Path currentPath = testPath;
+        Path currentPath;
+        // loop directory 
         for (File file : files) {
-//            currentPath.
-            System.out.println(file.getName() + ": " + getMD5CheckSum(file.toPath()));
+            if (file.isDirectory()) {
+                
+            }
+        }
+        for (File file : files) {
+            if (file.isFile())  System.out.println(file.getName() + ": " + getMD5CheckSum(file.toPath()));
         }
         System.out.println("--------------------");
-        File[] folders = getFolders(testPath);
-        for (File folder: folders) {
-            System.out.println(folder.getName());
-        }
+
     }
 
     /**
@@ -42,23 +48,41 @@ public class Main {
     }
 
 
-    private static File[] getFolders(Path path) {
-        File directory = new File(String.valueOf(path));
-        FilenameFilter isDirectory = (file, s) -> file.isDirectory();
-        File[] files = directory.listFiles(isDirectory);
-
-
-
-        return files;
-    }
-
     private static File[] getFiles(Path path) {
         File directory = new File(String.valueOf(path));
-        FilenameFilter isFile = (file, s) -> !file.isDirectory();
-        File[] files = directory.listFiles(isFile);
-
-
-
-        return files;
+//        FilenameFilter isFile = (file, s) -> !file.isDirectory();
+        return directory.listFiles();
+    }
+    
+    private static void checkDuplicate(Path path) throws IOException, NoSuchAlgorithmException {
+        File[] files = getFiles(path);
+        boolean hasChecksum, hasFileName;
+        for (File file : files) {
+            String checksum = getMD5CheckSum(file.toPath());
+            if (checksumHashMap.containsKey(checksum)) {
+                hasChecksum = true;
+            } else {
+                hasChecksum = false;
+            }
+            
+            if (checksumHashMap.containsValue(file.getName())) {
+                hasFileName = true;
+            } else {
+                hasFileName = false;
+            }
+            
+            
+            
+            if (!hasChecksum && !hasFileName) {
+                // add to hashtable 
+            } else if (!hasChecksum) {
+                // move to folder <>
+            } else if (!hasFileName) {
+                // move to folder <>
+            } else {
+                // move to folder<>
+            }
+            
+        }
     }
 }
