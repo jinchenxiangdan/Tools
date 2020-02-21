@@ -130,35 +130,30 @@ public class Main {
                 continue;
             }
             String fileName = file.getName();
-            if (CHECKSUM_HASHMAP.containsKey(checksum)) {
-                hasChecksum = true;
-            } else {
-                hasChecksum = false;
-            }
-            
-            if (CHECKSUM_HASHMAP.containsValue(fileName)) {
-                hasFileName = true;
-            } else {
-                hasFileName = false;
-            }
-            
-            
-            
+            hasChecksum = CHECKSUM_HASHMAP.containsKey(checksum);
+            hasFileName = CHECKSUM_HASHMAP.containsValue(fileName);
+
             if (!hasChecksum && !hasFileName) {
                 CHECKSUM_HASHMAP.put(checksum, fileName);
                 System.out.println("added to hash map");
                 // add to hashtable 
             } else if (!hasChecksum) {
-                // move to folder <>
-                System.out.printf("Moving file %s to folder %s with path %s\n", file.getName(), DUPLICATE_CONTENT_FOLDER.toString(),
+                // move to folder with same file content >
+                System.out.printf("Moving file %s to folder %s with path %s\n",
+                        file.getName(),
+                        DUPLICATE_CONTENT_FOLDER.toString(),
                         file.toPath().subpath(CURRENT_PATH.getNameCount(), file.toPath().getNameCount()-1));
             } else if (!hasFileName) {
-                // move to folder <>
-                System.out.printf("Moving file %s to folder %s with path %s\n", file.getName(), DUPLICATE_NAME_FOLDER.toString(),
+                // move to folder with same file name >
+                System.out.printf("Moving file %s to folder %s with path %s\n",
+                        file.getName(),
+                        DUPLICATE_NAME_FOLDER.toString(),
                         file.toPath().subpath(CURRENT_PATH.getNameCount(), file.toPath().getNameCount()-1));
             } else {
-                // move to folder<>
-                System.out.printf("Moving file %s to folder %s with path %s\n", file.getName(), DUPLICATE_ALL_FOLDER.toString(),
+                // move to folder with same name and same content >
+                System.out.printf("Moving file %s to folder %s with path %s\n",
+                        file.getName(),
+                        DUPLICATE_ALL_FOLDER.toString(),
                         file.toPath().subpath(CURRENT_PATH.getNameCount(), file.toPath().getNameCount()-1));
             }
             
