@@ -1,0 +1,54 @@
+move 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/out/production/DuplicateFileChecker/Main.class to 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/invalid_filename_files/out/production/DuplicateFileChecker/Main.classmove 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/.idea/workspace.xml to 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/invalid_filename_files/.idea/workspace.xmlmove 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/.idea/sbt.xml to 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/invalid_filename_files/.idea/sbt.xmlmove 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/.idea/vcs.xml to 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/invalid_filename_files/.idea/vcs.xmlmove 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/.idea/.gitignore to 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/invalid_filename_files/.idea/.gitignoremove 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/.idea/modules.xml to 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/invalid_filename_files/.idea/modules.xmlmove 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/.idea/misc.xml to 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/invalid_filename_files/.idea/misc.xmlmove 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/.idea/codeStyles/codeStyleConfig.xml to 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/invalid_filename_files/.idea/codeStyles/codeStyleConfig.xmlmove 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/duplicate_test_folder/test_file_1.txt to 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/invalid_filename_files/duplicate_test_folder/test_file_1.txtmove 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/duplicate_test_folder/asu-asdf-asdf-asd-ert/asu-asdf-asdf-asd-erd_testfile1.txt to 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/invalid_filename_files/duplicate_test_folder/asu-asdf-asdf-asd-ert/asu-asdf-asdf-asd-erd_testfile1.txtmove 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/duplicate_test_folder/test-folder-2/asu-asdf-asdf-asd-erd_testfile1.txt to 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/invalid_filename_files/duplicate_test_folder/test-folder-2/asu-asdf-asdf-asd-erd_testfile1.txtmove 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/duplicate_test_folder/test-folder-2/invalid.txt to 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/invalid_filename_files/duplicate_test_folder/test-folder-2/invalid.txtmove 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/src/Main.java to 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/invalid_filename_files/src/Main.javaInvalid file name: move /home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/out/production/DuplicateFileChecker/Main.class to 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/invalid_filename_files/out/production/DuplicateFileChecker/Main.class
+Invalid file name: move /home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/.idea/workspace.xml to 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/invalid_filename_files/.idea/workspace.xml
+Invalid file name: move /home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/.idea/sbt.xml to 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/invalid_filename_files/.idea/sbt.xml
+Invalid file name: move /home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/.idea/vcs.xml to 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/invalid_filename_files/.idea/vcs.xml
+Invalid file name: move /home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/.idea/.gitignore to 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/invalid_filename_files/.idea/.gitignore
+Invalid file name: move /home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/.idea/modules.xml to 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/invalid_filename_files/.idea/modules.xml
+Invalid file name: move /home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/.idea/misc.xml to 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/invalid_filename_files/.idea/misc.xml
+Invalid file name: move /home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/.idea/codeStyles/codeStyleConfig.xml to 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/invalid_filename_files/.idea/codeStyles/codeStyleConfig.xml
+Invalid file name: move /home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/duplicate_test_folder/test_file_1.txt to 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/invalid_filename_files/duplicate_test_folder/test_file_1.txt
+Same content: move /home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/duplicate_test_folder/asu-asdf-asdf-asd-ert/asu-asdf-asdf-asd-ert_testfile1.txt to 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/duplicate_content_files/duplicate_test_folder/asu-asdf-asdf-asd-ert/asu-asdf-asdf-asd-ert_testfile1.txt
+Invalid file name: move /home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/duplicate_test_folder/asu-asdf-asdf-asd-ert/asu-asdf-asdf-asd-erd_testfile1.txt to 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/invalid_filename_files/duplicate_test_folder/asu-asdf-asdf-asd-ert/asu-asdf-asdf-asd-erd_testfile1.txt
+Invalid file name: move /home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/duplicate_test_folder/test-folder-2/asu-asdf-asdf-asd-erd_testfile1.txt to 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/invalid_filename_files/duplicate_test_folder/test-folder-2/asu-asdf-asdf-asd-erd_testfile1.txt
+Invalid file name: move /home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/duplicate_test_folder/test-folder-2/invalid.txt to 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/invalid_filename_files/duplicate_test_folder/test-folder-2/invalid.txt
+Invalid file name: move /home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/src/Main.java to 
+/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/invalid_filename_files/src/Main.java

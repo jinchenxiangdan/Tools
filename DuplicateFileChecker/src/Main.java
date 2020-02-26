@@ -25,7 +25,7 @@ public class Main {
 
 
         // for testing
-        String testInputPath = "/home/wan/Desktop/ShawnJin_Workspace/Tools/DuplicateFileChecker/duplicate_test_folder";
+        String testInputPath = "/afghanprep/ftdca";
         CURRENT_PATH = Paths.get(testInputPath);
         Path duplicateFolderPath = CURRENT_PATH.subpath(0, CURRENT_PATH.getNameCount()-1);
 //        System.out.println("Path is : " + duplicateFolderPath);
@@ -94,7 +94,7 @@ public class Main {
         }
         MessageDigest messageDigest = MessageDigest.getInstance("MD5");
         messageDigest.update(Files.readAllBytes(path));
-        return DatatypeConverter.printHexBinary(messageDigest.digest()).toUpperCase();
+        return DatatypeConverter.printHexBinary(messageDigest.digest());
     }
 
 
