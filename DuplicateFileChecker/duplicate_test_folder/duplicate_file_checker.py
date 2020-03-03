@@ -1,8 +1,9 @@
 import hashlib
 import os
 import shutil
+
 from os import listdir
-from os.path import isfile, isdir, join
+from os.path import isfile, isdir, join, exists
 
 #
 # Author: Shawn Jin
@@ -43,44 +44,107 @@ def check_duplicate(directory):
             if checksum in MY_HASH_TABLE:
                 if file in FILE_NAME_TABLE:
                     # move to same content and same name folder
+                    target = DUPLICATE_ALL_FOLDER_PATH + file_path.replace(CURRENT_WORK_SPACE, "") + "\n"
+                    target_dir  = get_dir_path(target)
+
+
+                    if exists(target_dir):
+                        shutil.move(file_path, target)
+                    else:
+                        print("Folder doesn't exist, creating...")
+                        os.makedirs(target_dir)
+                        shutil.move(file_path, target)
+                        
                     f =open(LOG_FILE_PATH, 'a')
                     f.write("Complete duplicate file: move " + file_path + "\nto                            " +
-                        DUPLICATE_ALL_FOLDER_PATH + file_path.replace(CURRENT_WORK_SPACE, "") + "\n")
+                        target)
                     f.close()
-                    shutil.move(file_path, DUPLICATE_ALL_FOLDER_PATH + file_path.replace(CURRENT_WORK_SPACE, ""))
+     
                 else:
                     # move to folder : same contant but different name folder 
                     f =open(LOG_FILE_PATH, 'a')
+                    target = DUPLICATE_CONTENT_FOLDER_PATH + file_path.replace(CURRENT_WORK_SPACE, "") + "\n"
+                    target_dir  = get_dir_path(target)
+
+
+                    if exists(target_dir):
+                        shutil.move(file_path, target)
+                    else:
+                        print("Folder doesn't exist, creating...")
+                        os.makedirs(target_dir)
+                        shutil.move(file_path, target)
+                        
                     f.write("Same content: (with " + MY_HASH_TABLE[checksum] +")\n move " + file_path + "\n to   " +
-                        DUPLICATE_CONTENT_FOLDER_PATH + file_path.replace(CURRENT_WORK_SPACE, "") + "\n")
+                        target)
                     f.close()
-                    shutil.move(file_path, DUPLICATE_CONTENT_FOLDER_PATH + file_path.replace(CURRENT_WORK_SPACE, ""))
+
             else:
                 if file in FILE_NAME_TABLE:
                     f =open(LOG_FILE_PATH, 'a')
+                    target = DUPLICATE_FILENAME_FOLDER_PATH + file_path.replace(CURRENT_WORK_SPACE, "") + "\n"
+                    target_dir  = get_dir_path(target)
+
+
+                    if exists(target_dir):
+                        shutil.move(file_path, target)
+                    else:
+                        print("Folder doesn't exist, creating...")
+                        os.makedirs(target_dir)
+                        shutil.move(file_path, target)
+                        
                     f.write("Same filename: move " + file_path + "\nto                  " +
-                        DUPLICATE_FILENAME_FOLDER_PATH + file_path.replace(CURRENT_WORK_SPACE, "") + "\n")
+                        target)
                     f.close()
-                    shutil.move(file_path, DUPLICATE_FILENAME_FOLDER_PATH + file_path.replace(CURRENT_WORK_SPACE, ""))
+
                 else:
                     # add to hash map and move to a folder : final 
                     MY_HASH_TABLE[checksum] = file
                     FILE_NAME_TABLE[file]   = 1
+                    target = TARGET_FOLDER_PATH + "/" +file_path.split("/")[-1] + "\n"
+                    target_dir  = get_dir_path(target)
+
+                    if exists(target_dir):
+                        shutil.move(file_path, target)
+                    else:
+                        print("Folder doesn't exist, creating...")
+                        os.makedirs(target_dir)
+                        shutil.move(file_path, target)
+                        
                     f =open(LOG_FILE_PATH, 'a')
                     f.write("Valid File: move " + file_path + "\n to              " +
-                        TARGET_FOLDER_PATH + "/" +file_path.split("/")[-1] + "\n")
+                        target)
                     f.close()
-                    shutil.move(file_path, TARGET_FOLDER_PATH + "/" +file_path.split("/")[-1])
+
         else:
             # move to invlaid name folder 
-            f =open(LOG_FILE_PATH, 'a')
+            target      = INVALID_NAME_FOLDER_PATH + file_path.replace(CURRENT_WORK_SPACE, "") + "\n"
+            target_dir  = get_dir_path(target)
+            
+            if exists(target_dir):
+                shutil.move(file_path, target)
+            else:
+                print("Folder doesn't exist, creating...")
+                os.makedirs(target_dir)
+                shutil.move(file_path, target)
+
+            f =open(LOG_FILE_PATH, 'a')            
             f.write("Invalid file name: move " + file_path + "\nto                      " +
-                INVALID_NAME_FOLDER_PATH + file_path.replace(CURRENT_WORK_SPACE, "") + "\n")
+                target)
+            # f.write("move to " + get_dir_path(target))
             f.close()
-            shutil.move(file_path, INVALID_NAME_FOLDER_PATH + file_path.replace(CURRENT_WORK_SPACE, ""))
 
     for folders in list_folders(directory):
         check_duplicate(directory + "/" + folders)
+
+
+def get_dir_path(path_to_file):
+    # assert len(path_to_file) >= 2
+    info_array = path_to_file.split("/");
+    # print("Alert", info_array)
+    info_array = info_array[0:len(info_array)-1]
+    return "/".join(info_array)
+
+
 
 
 # create 4 folders that would be store all files. 
@@ -145,6 +209,8 @@ def main():
     folders = list_folders(current_path)
     for folder in folders:
         check_duplicate(folder)
+        # for fold in list_files(folder):
+            # print(get_dir_path(fold))
 
 
     # list all dict 
