@@ -21,6 +21,7 @@ def function2(MY_QUEUE, lock):
     while not IS_INPUT_DONE:
         while not MY_QUEUE.empty():
             print(MY_QUEUE.get())
+        print("Lock is: ", IS_INPUT_DONE)
         
 
     print("Done")

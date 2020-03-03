@@ -64,7 +64,7 @@ def check_duplicate(directory):
                     FILE_NAME_TABLE[file]   = 1
                     f =open(LOG_FILE_PATH, 'a')
                     f.write("Valid File: move " + file_path + "\n to              " +
-                        TARGET_FOLDER_PATH + file_path.replace(CURRENT_WORK_SPACE, "") + "\n")
+                        TARGET_FOLDER_PATH + "/" +file_path.split("/")[-1] + "\n")
                     f.close()
         else:
             # move to invlaid name folder 
