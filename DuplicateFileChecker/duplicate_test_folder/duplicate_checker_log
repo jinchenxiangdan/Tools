@@ -1,0 +1,16 @@
+Valid File: move /Users/shawn/Projects/Tools/DuplicateFileChecker/duplicate_test_folder/asu-asdf-asdf-asd-ert/asu-asdf-asdf-asd-ert_test1.txt
+ to              /Users/shawn/Projects/Tools/DuplicateFileChecker/duplicate_test_folder/final/asu-asdf-asdf-asd-ert_test1.txt
+Valid File: move /Users/shawn/Projects/Tools/DuplicateFileChecker/duplicate_test_folder/asu-asdf-asdf-asd-ert/asu-asdf-asdf-asd-ert_test2.txt
+ to              /Users/shawn/Projects/Tools/DuplicateFileChecker/duplicate_test_folder/final/asu-asdf-asdf-asd-ert_test2.txt
+Invalid file name: move /Users/shawn/Projects/Tools/DuplicateFileChecker/duplicate_test_folder/asu-asdf-asdf-asd-ert/test.txt
+to                      /Users/shawn/Projects/Tools/DuplicateFileChecker/duplicate_test_folder/invalid_filename_files/asu-asdf-asdf-asd-ert/test.txt
+Invalid file name: move /Users/shawn/Projects/Tools/DuplicateFileChecker/duplicate_test_folder/invalid_filename_files/asu-asdf-asdf-asd-ert/test.txt
+
+to                      /Users/shawn/Projects/Tools/DuplicateFileChecker/duplicate_test_folder/invalid_filename_files/invalid_filename_files/asu-asdf-asdf-asd-ert/test.txt
+
+
+49d5e5dc486e5f9c3f7210c6899f1b75 -- > asu-asdf-asdf-asd-ert_test1.txt
+ad0234829205b9033196ba818f7a872b -- > asu-asdf-asdf-asd-ert_test2.txt
+
+asu-asdf-asdf-asd-ert_test1.txt ==> 1
+asu-asdf-asdf-asd-ert_test2.txt ==> 1
