@@ -11,7 +11,6 @@ from os.path import isfile, isdir, join, exists
 #
 
 
-
 # get the check sum of files 
 def get_check_sum(input_path):
     # default is md5, could be changed to sha256 as need
@@ -40,6 +39,10 @@ def check_duplicate(directory):
         # check if the file name is valid or not 
         if file.startswith(prefix):
             checksum = get_check_sum(file_path)
+            # write all data to total file list 
+            f = open(TOTAL_FILE_LIST_PATH, 'a')
+            f.write(checksum + "\t" + file_path + "\n")
+            f.close()
 
             if checksum in MY_HASH_TABLE:
                 if file in FILE_NAME_TABLE:
@@ -47,51 +50,49 @@ def check_duplicate(directory):
                     target = DUPLICATE_ALL_FOLDER_PATH + file_path.replace(CURRENT_WORK_SPACE, "") + "\n"
                     target_dir  = get_dir_path(target)
 
-
-                    if exists(target_dir):
-                        shutil.move(file_path, target)
-                    else:
-                        print("Folder doesn't exist, creating...")
-                        os.makedirs(target_dir)
-                        shutil.move(file_path, target)
-                        
-                    f =open(LOG_FILE_PATH, 'a')
+                    # if exists(target_dir):
+                    #     shutil.move(file_path, target)
+                    # else:
+                    #     print("Folder ", target_dir ," doesn't exist, creating...")
+                    #     os.makedirs(target_dir)
+                    #     shutil.move(file_path, target)                    
+                    # write to log file 
+                    f = open(LOG_FILE_PATH, 'a')
                     f.write("Complete duplicate file: move " + file_path + "\nto                            " +
                         target)
                     f.close()
      
                 else:
                     # move to folder : same contant but different name folder 
-                    f =open(LOG_FILE_PATH, 'a')
                     target = DUPLICATE_CONTENT_FOLDER_PATH + file_path.replace(CURRENT_WORK_SPACE, "") + "\n"
                     target_dir  = get_dir_path(target)
 
-
-                    if exists(target_dir):
-                        shutil.move(file_path, target)
-                    else:
-                        print("Folder doesn't exist, creating...")
-                        os.makedirs(target_dir)
-                        shutil.move(file_path, target)
-                        
+                    # if exists(target_dir):
+                    #     shutil.move(file_path, target)
+                    # else:
+                    #     print("Folder ", target_dir ," doesn't exist, creating...")
+                    #     os.makedirs(target_dir)
+                    #     shutil.move(file_path, target)
+                    # write to log file 
+                    f = open(LOG_FILE_PATH, 'a')
                     f.write("Same content: (with " + MY_HASH_TABLE[checksum] +")\n move " + file_path + "\n to   " +
                         target)
                     f.close()
 
             else:
                 if file in FILE_NAME_TABLE:
-                    f =open(LOG_FILE_PATH, 'a')
+
                     target = DUPLICATE_FILENAME_FOLDER_PATH + file_path.replace(CURRENT_WORK_SPACE, "") + "\n"
                     target_dir  = get_dir_path(target)
 
-
-                    if exists(target_dir):
-                        shutil.move(file_path, target)
-                    else:
-                        print("Folder doesn't exist, creating...")
-                        os.makedirs(target_dir)
-                        shutil.move(file_path, target)
-                        
+                    # if exists(target_dir):
+                    #     shutil.move(file_path, target)
+                    # else:
+                    #     print("Folder ", target_dir ," doesn't exist, creating...")
+                    #     os.makedirs(target_dir)
+                    #     shutil.move(file_path, target)
+                    # write to log file 
+                    f =open(LOG_FILE_PATH, 'a')
                     f.write("Same filename: move " + file_path + "\nto                  " +
                         target)
                     f.close()
@@ -103,14 +104,14 @@ def check_duplicate(directory):
                     target = TARGET_FOLDER_PATH + "/" +file_path.split("/")[-1] + "\n"
                     target_dir  = get_dir_path(target)
 
-                    if exists(target_dir):
-                        shutil.move(file_path, target)
-                    else:
-                        print("Folder doesn't exist, creating...")
-                        os.makedirs(target_dir)
-                        shutil.move(file_path, target)
-                        
-                    f =open(LOG_FILE_PATH, 'a')
+                    # if exists(target_dir):
+                    #     shutil.move(file_path, target)
+                    # else:
+                    #     print("Folder ", target_dir ," doesn't exist, creating...")
+                    #     os.makedirs(target_dir)
+                    #     shutil.move(file_path, target)
+                    # write to log file 
+                    f = open(LOG_FILE_PATH, 'a')
                     f.write("Valid File: move " + file_path + "\n to              " +
                         target)
                     f.close()
@@ -120,17 +121,16 @@ def check_duplicate(directory):
             target      = INVALID_NAME_FOLDER_PATH + file_path.replace(CURRENT_WORK_SPACE, "") + "\n"
             target_dir  = get_dir_path(target)
             
-            if exists(target_dir):
-                shutil.move(file_path, target)
-            else:
-                print("Folder doesn't exist, creating...")
-                os.makedirs(target_dir)
-                shutil.move(file_path, target)
-
-            f =open(LOG_FILE_PATH, 'a')            
+            # if exists(target_dir):
+            #     shutil.move(file_path, target)
+            # else:
+            #     print("Folder ", target_dir ," doesn't exist, creating...")
+            #     os.makedirs(target_dir)
+            #     shutil.move(file_path, target)
+            # write to log file 
+            f = open(LOG_FILE_PATH, 'a')            
             f.write("Invalid file name: move " + file_path + "\nto                      " +
                 target)
-            # f.write("move to " + get_dir_path(target))
             f.close()
 
     for folders in list_folders(directory):
@@ -145,12 +145,8 @@ def get_dir_path(path_to_file):
     return "/".join(info_array)
 
 
-
-
 # create 4 folders that would be store all files. 
 def create_invalid_folders():
-
-
     # build directory
     try:
         os.mkdir(INVALID_NAME_FOLDER_PATH)
@@ -178,6 +174,7 @@ def create_invalid_folders():
         print("Directory ", TARGET_FOLDER_PATH,  "already exists.")
 
 
+
 # global variables 
 MY_HASH_TABLE                   = {}
 FILE_NAME_TABLE                 = {}
@@ -188,40 +185,31 @@ DUPLICATE_CONTENT_FOLDER_PATH   = CURRENT_WORK_SPACE + "/" + "duplicate_content_
 DUPLICATE_ALL_FOLDER_PATH       = CURRENT_WORK_SPACE + "/" + "duplicate_all_files"
 TARGET_FOLDER_PATH              = CURRENT_WORK_SPACE + "/" + "final"
 LOG_FILE_PATH                   = CURRENT_WORK_SPACE + "/" + "duplicate_checker_log"
+TOTAL_FILE_LIST_PATH            = CURRENT_WORK_SPACE + "/" + "total_file_list"
 
 
 def main():
 
-
     # get current work directory 
-    current_path = os.getcwd()
+    current_path    = os.getcwd()
+    # list all folders we need to check 
+    folders         = list_folders(current_path)
     # create invlaid forlders to store invalid files 
     create_invalid_folders()
-    # clear the log file
+    # clear the log file & list file 
     open(LOG_FILE_PATH, "w").close()
-
-
-    # test area 
-    # print("start...")
-    # print("path folders: ", list_folders(current_path))
-    # print("path files: ", list_files(current_path))
-    # end test area 
-    folders = list_folders(current_path)
+    open(TOTAL_FILE_LIST_PATH, "w").close()
+    # recursively loop folders
     for folder in folders:
         check_duplicate(folder)
-        # for fold in list_files(folder):
-            # print(get_dir_path(fold))
-
 
     # list all dict 
     f = open(LOG_FILE_PATH, "a")
     for key, value in MY_HASH_TABLE.items():
-        # print(key, " --> ", value)
         f.write("\n" + key + " -- > " + value)
     f.write("\n")
     # list name
     for key, value in FILE_NAME_TABLE.items():
-        # print(key, " ==> ", value)
         f.write("\n" + key + " ==> " + str(value))
     f.close()
 
