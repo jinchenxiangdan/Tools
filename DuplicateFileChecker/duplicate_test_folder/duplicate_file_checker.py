@@ -58,7 +58,7 @@ def check_duplicate(directory):
                     #     shutil.move(file_path, target)                    
                     # write to log file 
                     f = open(DUPLICATE_ALL_FILE_LIST_PATH, 'a')
-                    f.write("Complete duplicate file: (with:" + FILE_NAME_TABLE[file] + ")\n move     " + file_path + "\nto    " +
+                    f.write("Complete duplicate file: (with:" + FILE_NAME_TABLE[file] + ")\n move     " + file_path + "\nto      " +
                         target)
                     f.close()
      
@@ -76,7 +76,7 @@ def check_duplicate(directory):
                     # write to log file 
                     f = open(DUPLICATE_CONTENT_LIST_PATH, 'a')
                     f.write("Same content: (with " + FILE_NAME_TABLE[MY_HASH_TABLE[checksum]] +")\n move    " +         
-                            file_path + "\n to    " + target)
+                            file_path + "\n to      " + target)
                     f.close()
 
             else:
@@ -94,7 +94,7 @@ def check_duplicate(directory):
                     # write to log file 
                     f =open(DUPLICATE_FILENAME_LIST_PATH, 'a')
                     f.write("Same filename: (with: " + FILE_NAME_TABLE[file] + ") \n move    " + file_path + 
-                            "\n to   " + target)
+                            "\n to     " + target)
                     f.close()
 
                 else:
