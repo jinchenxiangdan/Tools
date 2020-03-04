@@ -19,7 +19,7 @@ def function1():
 
 
 def function2():
-    global MY_QUEUE, IS_INPUT_DONE,lock
+    # global MY_QUEUE, IS_INPUT_DONE,lock
     while not IS_INPUT_DONE:
         while not MY_QUEUE.empty():
             print(MY_QUEUE.get())

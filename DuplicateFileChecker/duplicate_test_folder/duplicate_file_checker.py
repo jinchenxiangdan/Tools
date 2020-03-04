@@ -57,8 +57,8 @@ def check_duplicate(directory):
                     #     os.makedirs(target_dir)
                     #     shutil.move(file_path, target)                    
                     # write to log file 
-                    f = open(LOG_FILE_PATH, 'a')
-                    f.write("Complete duplicate file: move " + file_path + "\nto                            " +
+                    f = open(DUPLICATE_ALL_FILE_LIST_PATH, 'a')
+                    f.write("Complete duplicate file: (with:" + FILE_NAME_TABLE[file] + ")\n move     " + file_path + "\nto    " +
                         target)
                     f.close()
      
@@ -74,9 +74,9 @@ def check_duplicate(directory):
                     #     os.makedirs(target_dir)
                     #     shutil.move(file_path, target)
                     # write to log file 
-                    f = open(LOG_FILE_PATH, 'a')
-                    f.write("Same content: (with " + MY_HASH_TABLE[checksum] +")\n move " + file_path + "\n to   " +
-                        target)
+                    f = open(DUPLICATE_CONTENT_LIST_PATH, 'a')
+                    f.write("Same content: (with " + FILE_NAME_TABLE[MY_HASH_TABLE[checksum]] +")\n move    " +         
+                            file_path + "\n to    " + target)
                     f.close()
 
             else:
@@ -92,16 +92,16 @@ def check_duplicate(directory):
                     #     os.makedirs(target_dir)
                     #     shutil.move(file_path, target)
                     # write to log file 
-                    f =open(LOG_FILE_PATH, 'a')
-                    f.write("Same filename: move " + file_path + "\nto                  " +
-                        target)
+                    f =open(DUPLICATE_FILENAME_LIST_PATH, 'a')
+                    f.write("Same filename: (with: " + FILE_NAME_TABLE[file] + ") \n move    " + file_path + 
+                            "\n to   " + target)
                     f.close()
 
                 else:
                     # add to hash map and move to a folder : final 
                     MY_HASH_TABLE[checksum] = file
-                    FILE_NAME_TABLE[file]   = 1
-                    target = TARGET_FOLDER_PATH + "/" +file_path.split("/")[-1] + "\n"
+                    FILE_NAME_TABLE[file]   = file_path
+                    target = TARGET_FOLDER_PATH + "/" + file_path.split("/")[-1] + "\n"
                     target_dir  = get_dir_path(target)
 
                     # if exists(target_dir):
@@ -128,7 +128,7 @@ def check_duplicate(directory):
             #     os.makedirs(target_dir)
             #     shutil.move(file_path, target)
             # write to log file 
-            f = open(LOG_FILE_PATH, 'a')            
+            f = open(INVALID_FILE_LIST_PATH, 'a')            
             f.write("Invalid file name: move " + file_path + "\nto                      " +
                 target)
             f.close()
@@ -184,8 +184,12 @@ DUPLICATE_FILENAME_FOLDER_PATH  = CURRENT_WORK_SPACE + "/" + "duplicate_name_fil
 DUPLICATE_CONTENT_FOLDER_PATH   = CURRENT_WORK_SPACE + "/" + "duplicate_content_files"
 DUPLICATE_ALL_FOLDER_PATH       = CURRENT_WORK_SPACE + "/" + "duplicate_all_files"
 TARGET_FOLDER_PATH              = CURRENT_WORK_SPACE + "/" + "final"
-LOG_FILE_PATH                   = CURRENT_WORK_SPACE + "/" + "duplicate_checker_log"
-TOTAL_FILE_LIST_PATH            = CURRENT_WORK_SPACE + "/" + "total_file_list"
+LOG_FILE_PATH                   = CURRENT_WORK_SPACE + "/" + "duplicate_checker_log.out"
+TOTAL_FILE_LIST_PATH            = CURRENT_WORK_SPACE + "/" + "total_file_list.out"
+DUPLICATE_CONTENT_LIST_PATH     = CURRENT_WORK_SPACE + "/" + "duplicate_content_file_list.out"
+DUPLICATE_FILENAME_LIST_PATH    = CURRENT_WORK_SPACE + "/" + "duplicate_name_file_list.out"
+DUPLICATE_ALL_FILE_LIST_PATH    = CURRENT_WORK_SPACE + "/" + "duplicate_all_file_list.out"
+INVALID_FILE_LIST_PATH          = CURRENT_WORK_SPACE + "/" + "invalid_filename_list.out"
 
 
 def main():
@@ -197,12 +201,15 @@ def main():
     # create invlaid forlders to store invalid files 
     create_invalid_folders()
     # clear the log file & list file 
-    open(LOG_FILE_PATH, "w").close()
-    open(TOTAL_FILE_LIST_PATH, "w").close()
+    open(LOG_FILE_PATH,                 "w").close()
+    open(TOTAL_FILE_LIST_PATH,          "w").close()
+    open(DUPLICATE_CONTENT_LIST_PATH,   "w").close()
+    open(DUPLICATE_FILENAME_LIST_PATH,  "w").close()
+    open(DUPLICATE_ALL_FILE_LIST_PATH,  "w").close()
+    open(INVALID_FILE_LIST_PATH,        "w").close()
     # recursively loop folders
     for folder in folders:
         check_duplicate(folder)
-
     # list all dict 
     f = open(LOG_FILE_PATH, "a")
     for key, value in MY_HASH_TABLE.items():
