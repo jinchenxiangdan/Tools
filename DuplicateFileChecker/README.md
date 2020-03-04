@@ -1,7 +1,7 @@
 # Duplicate File Checker 
 the python version is complete version.
 
-the java version can only check 2 level subdirectories
+the java version can only check two level subdirectories
 
 
 
@@ -12,7 +12,7 @@ the java version can only check 2 level subdirectories
 
 
 ## Generated Information 
-It would generate five folders and 2 log files. 
+It would generate five folders and two log files. 
 
 Folders:
 - duplicate_content_files
