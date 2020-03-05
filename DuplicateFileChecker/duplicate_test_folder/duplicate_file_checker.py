@@ -1,6 +1,7 @@
 import hashlib
 import os
 import shutil
+import time
 
 from os import listdir
 from os.path import isfile, isdir, join, exists
@@ -221,4 +222,7 @@ def main():
     f.close()
 
 if __name__ == "__main__":
+    start_time  = time.time()
     main()
+    end_time    = time.time()
+    print("Totally running time: ", end_time-start_time, "s")
