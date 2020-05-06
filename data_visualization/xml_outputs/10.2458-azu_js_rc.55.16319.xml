@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='utf8'?>
+<ns0:crossref_result xmlns:ns0="http://www.crossref.org/qrschema/3.0" xmlns:ns2="http://www.crossref.org/xschema/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" xsi:schemaLocation="http://www.crossref.org/qrschema/3.0 http://www.crossref.org/schemas/crossref_query_output3.0.xsd">
+  <ns0:query_result>
+    <ns0:head>
+      <ns0:doi_batch_id>none</ns0:doi_batch_id>
+    </ns0:head>
+    <ns0:body>
+      <ns0:query status="resolved">
+        <ns0:doi type="journal_article">10.2458/azu_js_rc.55.16319</ns0:doi>
+        <ns0:crm-item name="publisher-name" type="string">Cambridge University Press (CUP)</ns0:crm-item>
+        <ns0:crm-item name="prefix-name" type="string">Cambridge University Press</ns0:crm-item>
+        <ns0:crm-item name="member-id" type="number">56</ns0:crm-item>
+        <ns0:crm-item name="citation-id" type="number">62170957</ns0:crm-item>
+        <ns0:crm-item name="journal-id" type="number">179005</ns0:crm-item>
+        <ns0:crm-item name="deposit-timestamp" type="number">201305091437</ns0:crm-item>
+        <ns0:crm-item name="owner-prefix" type="string">10.1017</ns0:crm-item>
+        <ns0:crm-item name="last-update" type="date">2016-01-12T15:42:32Z</ns0:crm-item>
+        <ns0:crm-item name="created" type="date">2013-05-09T18:37:52Z</ns0:crm-item>
+        <ns0:crm-item name="citedby-count" type="number">0</ns0:crm-item>
+        <ns0:doi_record>
+          <ns2:crossref xsi:schemaLocation="http://www.crossref.org/xschema/1.1 http://doi.crossref.org/schemas/unixref1.1.xsd">
+            <ns2:journal>
+              <ns2:journal_metadata>
+                <ns2:full_title>Radiocarbon</ns2:full_title>
+                <ns2:abbrev_title>azu_js_rc</ns2:abbrev_title>
+                <ns2:issn media_type="print">00338222</ns2:issn>
+              </ns2:journal_metadata>
+              <ns2:journal_issue>
+                <ns2:publication_date media_type="print">
+                  <ns2:year>2013</ns2:year>
+                </ns2:publication_date>
+                <ns2:journal_volume>
+                  <ns2:volume>55</ns2:volume>
+                </ns2:journal_volume>
+                <ns2:issue>3–4</ns2:issue>
+              </ns2:journal_issue>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <ns2:journal_article publication_type="full_text">
+                <ns2:titles>
+                  <ns2:title>Upgrade of the CO2 Direct Absorption Method for Low-Level 14C Liquid Scintillation Counting</ns2:title>
+                </ns2:titles>
+                <ns2:contributors>
+                  <ns2:person_name contributor_role="author" sequence="first">
+                    <ns2:given_name>Chiara</ns2:given_name>
+                    <ns2:surname>Canducci</ns2:surname>
+                  </ns2:person_name>
+                </ns2:contributors>
+                <ns2:publication_date media_type="print">
+                  <ns2:year>2013</ns2:year>
+                </ns2:publication_date>
+                <ns2:doi_data>
+                  <ns2:doi>10.2458/azu_js_rc.55.16319</ns2:doi>
+                  <ns2:resource>https://journals.uair.arizona.edu/index.php/radiocarbon/article/view/16319</ns2:resource>
+                </ns2:doi_data>
+              </ns2:journal_article>
+            </ns2:journal>
+          </ns2:crossref>
+        </ns0:doi_record>
+      </ns0:query>
+    </ns0:body>
+  </ns0:query_result>
+</ns0:crossref_result>

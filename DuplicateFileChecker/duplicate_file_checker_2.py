@@ -139,7 +139,7 @@ def check_duplicate(directory):
 
 def get_dir_path(path_to_file):
     # assert len(path_to_file) >= 2
-    info_array = path_to_file.split("/");
+    info_array = path_to_file.split("/")
     # print("Alert", info_array)
     info_array = info_array[0:len(info_array)-1]
     return "/".join(info_array)
