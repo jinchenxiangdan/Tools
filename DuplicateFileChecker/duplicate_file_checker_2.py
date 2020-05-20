@@ -7,7 +7,7 @@ from os.path import isfile, isdir, join, exists
 
 #
 # Author: Shawn Jin
-#
+# Purpose: 
 #
 
 
