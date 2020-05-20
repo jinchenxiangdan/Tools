@@ -14,7 +14,7 @@ from os.path import isfile, isdir, join, exists
 # get the check sum of files 
 def get_check_sum(input_path):
     # default is md5, could be changed to sha256 as need
-    return hashlib.md5(open(input_path, "rb").read()).hexdigest()
+    return hashlib.sha256(open(input_path, "rb").read()).hexdigest()
 
 
 # list files under input path 
