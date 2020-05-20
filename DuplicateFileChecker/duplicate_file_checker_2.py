@@ -111,7 +111,7 @@ def check_duplicate(directory):
                         os.makedirs(target_dir)
                         shutil.move(file_path, target)
                     # write to log file 
-                    f = open(LOG_FILE_PATH, 'a')
+                    f = open(UNIQUE_FILE_LIST_PATH, 'a')
                     f.write("Valid File: move " + file_path + "\n to              " +
                         target + "\n")
                     f.close()
@@ -185,12 +185,13 @@ DUPLICATE_FILENAME_FOLDER_PATH  = OUT_DIRECTORY + "/" + "duplicate_name_files"
 DUPLICATE_CONTENT_FOLDER_PATH   = OUT_DIRECTORY + "/" + "duplicate_content_files"
 DUPLICATE_ALL_FOLDER_PATH       = OUT_DIRECTORY + "/" + "duplicate_all_files"
 TARGET_FOLDER_PATH              = OUT_DIRECTORY + "/" + "final"
-LOG_FILE_PATH                   = OUT_DIRECTORY + "/" + "duplicate_checker_log.out"
+LOG_FILE_PATH                   = OUT_DIRECTORY + "/" + "hashtable_info.out"
 TOTAL_FILE_LIST_PATH            = OUT_DIRECTORY + "/" + "total_file_list.out"
 DUPLICATE_CONTENT_LIST_PATH     = OUT_DIRECTORY + "/" + "duplicate_content_file_list.out"
 DUPLICATE_FILENAME_LIST_PATH    = OUT_DIRECTORY + "/" + "duplicate_name_file_list.out"
 DUPLICATE_ALL_FILE_LIST_PATH    = OUT_DIRECTORY + "/" + "duplicate_all_file_list.out"
 INVALID_FILE_LIST_PATH          = OUT_DIRECTORY + "/" + "invalid_filename_list.out"
+UNIQUE_FILE_LIST_PATH           = OUT_DIRECTORY + "/" + "unique_file_list.out"
 
 
 
@@ -212,6 +213,7 @@ def main():
     open(DUPLICATE_FILENAME_LIST_PATH,  "w").close()
     open(DUPLICATE_ALL_FILE_LIST_PATH,  "w").close()
     open(INVALID_FILE_LIST_PATH,        "w").close()
+    open(UNIQUE_FILE_LIST_PATH,         "w").close()
     # recursively loop folders
     for folder in folders:
         check_duplicate(folder)
