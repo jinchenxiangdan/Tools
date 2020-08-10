@@ -53,10 +53,10 @@ MoveCursor(key) {
 ; mapping quick comment
 !/::Send ^/
 ; mapping arrow keys ! The arrow area marco doesn't work well 
-; !i::MoveCursor("UP")UPUP
-; !k::Down
-; !j::Left
-; !l::Right
+!i::Send {Up}
+!k::Send {Down}
+!j::Send {Left}
+!l::Send {Right}
 
 ; system
 !w::Send ^w
