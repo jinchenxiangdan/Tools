@@ -13,6 +13,7 @@
 ;       Win Logo    -> #
 ; For more KeyList: https://www.autohotkey.com/docs/KeyList.htm
 ;                   http://xahlee.info/mswin/autohotkey_key_notations.html
+; Want it lunch when your PC startup? : https://www.autohotkey.com/docs/FAQ.htm#Startup
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 #IfWinActive
 SendMode Input   ;  Recommended for new scripts due to its superior speed and reliability.
