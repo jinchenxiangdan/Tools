@@ -12,6 +12,7 @@
 ;       Shift       -> ^
 ;       Win Logo    -> #
 ; For more KeyList: https://www.autohotkey.com/docs/KeyList.htm
+;                   http://xahlee.info/mswin/autohotkey_key_notations.html
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 #IfWinActive
 SendMode Input   ;  Recommended for new scripts due to its superior speed and reliability.
