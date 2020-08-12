@@ -56,6 +56,7 @@ SendMode Input   ;  Recommended for new scripts due to its superior speed and re
 !w::Send ^w
 !t::Send ^t
 !n::Send ^n 
+!+n::Send ^+n
 !r::Send ^r
 !1::Send ^1
 !2::Send ^2
