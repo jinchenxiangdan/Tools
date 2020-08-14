@@ -21,15 +21,16 @@ SendMode Input   ;  Recommended for new scripts due to its superior speed and re
 ;;;;;;;;;;;;;;;;;;;;; 
 ; editing 
 ;;;;;;;;;;;;;;;;;;;;; 
-!a::Send ^a
-!x::Send ^x
-!c::Send ^c
-!v::Send ^v
-!z::Send ^z
-!s::Send ^s 
-!f::Send ^f 
-; line operation 
-!Left::Send {Home}
+
+!a::Send ^a             ; select all
+!x::Send ^x             ; cut
+!c::Send ^c             ; copy
+!v::Send ^v             ; paste
+!z::Send ^z             ; undo
+!s::Send ^s             ; save 
+!f::Send ^f             ; find 
+; mapping line operation 
+!Left::Send {Home}      
 !+Left::Send +{Home}
 !Right::Send {End}
 !+Right::Send +{End}
@@ -53,15 +54,19 @@ SendMode Input   ;  Recommended for new scripts due to its superior speed and re
 ;;;;;;;;;;;;;;;;;;;;;;
 ; system
 ;;;;;;;;;;;;;;;;;;;;;;
+
+; mapping window operation 
 !w::Send ^w
 !t::Send ^t
 !n::Send ^n 
 !+n::Send ^+n
 !r::Send ^r
+; mapping tab switch
 !1::Send ^1
 !2::Send ^2
 !3::Send ^3
 !4::Send ^4
+
 ; quit 
 return
 
